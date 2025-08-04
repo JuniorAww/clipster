@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: ultrafox
+      POSTGRES_PASSWORD: EekAwtQdehfLZC2i8PaTnOYjVoSzoOVl
+      POSTGRES_DB: media
+    ports:
+      - 5432:5432
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - 127.0.0.1:6379:6379
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8123:8080
